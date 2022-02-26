@@ -1,5 +1,7 @@
 package com.charles.steps;
 
+import org.junit.Assert;
+
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Quando;
@@ -21,7 +23,7 @@ public class AprenderCucumber {
 		System.out.println("qualquer coisa");
 	}
 
-	private int contador = 0;
+	private Integer contador = 0;
 	//@Dado("^que o valor do contador é (\\d+)$")
 	@Dado("que o valor do contador é {int}")
 	public void queOValorDoContadorÉ(Integer int1) {
@@ -35,9 +37,8 @@ public class AprenderCucumber {
 
 	@Entao("o valor do contador será {int}")
 	public void oValorDoContadorSerá(Integer int1) {
-	    System.out.println(int1);
-	    System.out.println(contador);
-	    System.out.println(int1 == contador);
+	   
+		Assert.assertEquals(int1, contador);
 	}
 	
 }
