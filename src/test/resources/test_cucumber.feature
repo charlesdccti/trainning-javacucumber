@@ -13,3 +13,13 @@ Cenario: Deve incrementar o contador
   Dado que o valor do contador é 15 
   Quando eu incrementar em 3
   Entao o valor do contador será 18
+  
+Cenario: Deve incrementar o contador
+  Dado que o valor do contador é 123 
+  Quando eu incrementar em 35
+  Entao o valor do contador será 158 
+
+Cenario: Deve calcular o atraso da entrega
+  Dado que a entrega é dia 05/04/2018 
+  Quando a entrega atrasa em 2 dias
+  Entao a entrega será efetuada em 07/04/2018
