@@ -23,3 +23,8 @@ Cenario: Deve calcular o atraso da entrega
   Dado que a entrega é dia 05/04/2018 
   Quando a entrega atrasa em 2 dias
   Entao a entrega será efetuada em 07/04/2018
+  
+Cenario: Deve calcular o atraso da entrega da china
+  Dado que a entrega é dia 05/04/2018 
+  Quando a entrega atrasa em 2 meses
+  Entao a entrega será efetuada em 05/06/2018
