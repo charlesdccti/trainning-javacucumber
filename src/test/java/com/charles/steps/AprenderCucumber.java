@@ -9,6 +9,7 @@ import org.junit.Assert;
 
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
+import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
 
 public class AprenderCucumber {
@@ -29,8 +30,7 @@ public class AprenderCucumber {
 	}
 
 	private Integer contador = 0;
-	//@Dado("^que o valor do contador é (\\d+)$")
-	@Dado("que o valor do contador é {int}")
+	@Dado("que o valor do contador é (\\d+)")
 	public void queOValorDoContadorÉ(Integer int1) {
 		contador = int1;
 	}
@@ -40,10 +40,9 @@ public class AprenderCucumber {
 		contador = contador + int1;
 	}
 
-	@Entao("o valor do contador será {int}")
+	@Entao("o valor do contador será (\\d+)")
 	public void oValorDoContadorSerá(Integer int1) {
-	   
-		Assert.assertEquals(int1, contador);
+	   Assert.assertEquals(int1, contador);
 	}
 	
 	Date entrega = new Date();
@@ -76,6 +75,35 @@ public class AprenderCucumber {
 	    String dataformatada = format.format(entrega);
 	    Assert.assertEquals(data, dataformatada);
 	}
+	
+	@Dado("^que o ticket( especial)? é (A.\\d{3})$")
+	public void queOTicketÉAF(String tipo, String arg1) throws Throwable {
+		
+	}
 
+	@Dado("que o valor da passagem é R$ {double}")
+	public void queOValorDaPassagemÉR$(Double numero) {
+		System.out.println(numero);
+	}
+
+	@Dado("que o nome do passageiro é {string}")
+	public void queONomeDoPassageiroÉ(String string) {
+		
+	}
+
+	@Dado("que o telefone do passageiro é {int}-{int}")
+	public void queOTelefoneDoPassageiroÉ(Integer int1, Integer int2) {
+		
+	}
+
+	@Quando("criar os steps")
+	public void criarOsSteps() {
+		
+	}
+
+	@Então("o teste vai funcionar")
+	public void oTesteVaiFuncionar() {
+		
+	}
 	
 }

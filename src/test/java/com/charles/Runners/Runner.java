@@ -9,12 +9,11 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 
 @RunWith(Cucumber.class)
 @CucumberOptions(
-		//features = "src/test/resources/features/Test_cucumber.feature",
-		features = "src/test/resources/test_cucumber.feature",
-		glue = {"com.charles.steps"},
-		//	tags = {"@unitários", "not @ignore"},
+		features = "src/test/resources/features/test_cucumber.feature",
+		glue = "com.charles.steps",
 		plugin = {"pretty", "html:target/report-html", "json:target/report.json"},
 		monochrome = true,
+		tags = "~@ignore",
 		snippets = SnippetType.CAMELCASE,
 		dryRun = false,
 		strict = false
