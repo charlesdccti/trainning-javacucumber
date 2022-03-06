@@ -18,6 +18,7 @@ public class AlugarFilmeSteps {
 	private Filme filme;
 	private AluguelService aluguelService = new AluguelService();
 	private NotaAluguel notaAluguel;
+	private String erro;
 	
 	@Dado("um filme com estoque de {int} unidades")
 	public void umFilmeComEstoqueDeUnidades(Integer int1) {
@@ -32,7 +33,11 @@ public class AlugarFilmeSteps {
 
 	@Quando("alugar")
 	public void alugar() throws Throwable {
-	    notaAluguel = aluguelService.alugar(filme);
+	    try {
+	    	notaAluguel = aluguelService.alugar(filme);
+		} catch (RuntimeException e) {
+			erro = e.getMessage();
+		}
 	}
 
 	@Entao("o preço do aluguel será R$ {int}")
@@ -62,25 +67,24 @@ public class AlugarFilmeSteps {
 
 	@Entao("nao será possível por falta de estoque")
 	public void naoSeráPossívelPorFaltaDeEstoque() {
-	    // Write code here that turns the phrase above into concrete actions
-	    throw new cucumber.api.PendingException();
+	    
 	}
 
 	@Dado("que o tipo de aluguel seja extendido")
 	public void queOTipoDeAluguelSejaExtendido() {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new cucumber.api.PendingException();
+	    //throw new cucumber.api.PendingException();
 	}
 
 	@Entao("a data de entrega será em {int} dias")
 	public void aDataDeEntregaSeráEmDias(Integer int1) {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new cucumber.api.PendingException();
+	    //throw new cucumber.api.PendingException();
 	}
 
 	@Entao("a pontuaçao recebida será de {int} pontos")
 	public void aPontuaçaoRecebidaSeráDePontos(Integer int1) {
 	    // Write code here that turns the phrase above into concrete actions
-	    throw new cucumber.api.PendingException();		
+	    //throw new cucumber.api.PendingException();		
 	}
 }

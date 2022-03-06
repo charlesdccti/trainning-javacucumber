@@ -4,15 +4,17 @@ import java.util.Calendar;
 
 import com.charles.entities.Filme;
 import com.charles.entities.NotaAluguel;
+import com.charles.utils.DateUtils;
 
 public class AluguelService {
 
 	public NotaAluguel alugar(Filme filme) {
+		if(filme.getEstoque() == 0 )
+			throw new RuntimeException("Filme sem estoque");
+		
 		NotaAluguel notaAluguel = new NotaAluguel();
 		notaAluguel.setPreco(filme.getAluguel());
-		Calendar cal = Calendar.getInstance();
-		cal.add(Calendar.DAY_OF_MONTH, 1);
-		notaAluguel.setDataEntrega(cal.getTime());
+		notaAluguel.setDataEntrega(DateUtils.obterDataDiferencaDias(1));
 		filme.setEstoque(filme.getEstoque() - 1);
 		
 		return notaAluguel;
