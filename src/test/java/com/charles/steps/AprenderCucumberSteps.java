@@ -12,7 +12,7 @@ import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
 
-public class AprenderCucumber {
+public class AprenderCucumberSteps {
 
 	@Dado("que eu criei o arquivo corretamente")
 	public void queEuCrieiOArquivoCorretamente()  throws Throwable {
