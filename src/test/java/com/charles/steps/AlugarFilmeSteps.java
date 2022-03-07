@@ -1,5 +1,7 @@
 package com.charles.steps;
 
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
@@ -8,6 +10,7 @@ import org.junit.Assert;
 import com.charles.entities.Filme;
 import com.charles.entities.NotaAluguel;
 import com.charles.services.AluguelService;
+import com.charles.utils.DateUtils;
 
 import io.cucumber.java.pt.Dado;
 import io.cucumber.java.pt.Entao;
@@ -19,6 +22,7 @@ public class AlugarFilmeSteps {
 	private AluguelService aluguelService = new AluguelService();
 	private NotaAluguel notaAluguel;
 	private String erro;
+	private String tipoAluguel;
 	
 	@Dado("um filme com estoque de {int} unidades")
 	public void umFilmeComEstoqueDeUnidades(Integer int1) {
@@ -34,7 +38,7 @@ public class AlugarFilmeSteps {
 	@Quando("alugar")
 	public void alugar() throws Throwable {
 	    try {
-	    	notaAluguel = aluguelService.alugar(filme);
+	    	notaAluguel = aluguelService.alugar(filme, tipoAluguel);
 		} catch (RuntimeException e) {
 			erro = e.getMessage();
 		}
@@ -72,19 +76,21 @@ public class AlugarFilmeSteps {
 
 	@Dado("que o tipo de aluguel seja extendido")
 	public void queOTipoDeAluguelSejaExtendido() {
-	    // Write code here that turns the phrase above into concrete actions
-	    //throw new cucumber.api.PendingException();
+	    tipoAluguel = "extendido";
 	}
 
 	@Entao("a data de entrega será em {int} dias")
 	public void aDataDeEntregaSeráEmDias(Integer int1) {
-	    // Write code here that turns the phrase above into concrete actions
-	    //throw new cucumber.api.PendingException();
+	    Date dataEsperada = DateUtils.obterDataDiferencaDias(1);
+	    Date dataReal = notaAluguel.getDataEntrega();
+	    
+	    DateFormat format = new SimpleDateFormat("dd/MM/yyyy");
+	    
+	    Assert.assertEquals(format.format(dataEsperada), format.format(dataReal));
 	}
 
 	@Entao("a pontuaçao recebida será de {int} pontos")
-	public void aPontuaçaoRecebidaSeráDePontos(Integer int1) {
-	    // Write code here that turns the phrase above into concrete actions
-	    //throw new cucumber.api.PendingException();		
+	public void aPontuaçaoRecebidaSeráDePontos(int int1) {
+	    Assert.assertEquals(int1, notaAluguel.getPontuacao());		
 	}
 }

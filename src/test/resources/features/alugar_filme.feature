@@ -19,6 +19,14 @@ Cenario: Não deve alugar filme sem sucesso
   Quando alugar
   Entao nao será possível por falta de estoque
   E o estoque do filme será 0 unidade.
-
+  
+Cenario: deve dar condições especias para categoria extendida	
+  Dado um filme com estoque de 2 unidades
+  E que o preço de aluguel seja R$ 4 
+  E que o tipo de aluguel seja extendido 
+  Quando alugar
+  Entao o preço do aluguel será R$ 8 
+  E a data de entrega será em 3 dias
+  E a pontuaçao recebida será de 2 pontos 
   
   

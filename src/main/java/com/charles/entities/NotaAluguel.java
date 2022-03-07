@@ -6,7 +6,7 @@ public class NotaAluguel {
 
 	private Integer preco;
 	private Date dataEntrega; 
-	
+	private int pontuacao;
 	
 	public Integer getPreco() {
 		return preco;
@@ -22,6 +22,14 @@ public class NotaAluguel {
 
 	public void setDataEntrega(Date time) {
 		this.dataEntrega = time;
+	}
+
+	public int getPontuacao() {
+		return pontuacao;
+	}
+
+	public void setPontuacao(int pontuacao) {
+		this.pontuacao = pontuacao;
 	}
 
 }
