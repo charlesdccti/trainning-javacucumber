@@ -71,12 +71,12 @@ public class AlugarFilmeSteps {
 
 	@Entao("nao será possível por falta de estoque")
 	public void naoSeráPossívelPorFaltaDeEstoque() {
-	    
+		Assert.assertEquals("Filme sem estoque", erro);
 	}
 
-	@Dado("que o tipo de aluguel seja extendido")
-	public void queOTipoDeAluguelSejaExtendido() {
-	    tipoAluguel = "extendido";
+	@Dado("^que o tipo de aluguel seja (.*)$")
+	public void queOTipoDeAluguelSejaExtendido(String tipo) {
+	    tipoAluguel = tipo;
 	}
 
 	@Entao("a data de entrega será em {int} dias")

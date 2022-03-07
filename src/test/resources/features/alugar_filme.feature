@@ -29,4 +29,13 @@ Cenario: deve dar condições especias para categoria extendida
   E a data de entrega será em 3 dias
   E a pontuaçao recebida será de 2 pontos 
   
+Cenario: deve alugar para categoria comum
+  Dado um filme com estoque de 2 unidades
+  E que o preço de aluguel seja R$ 4 
+  E que o tipo de aluguel seja comum 
+  Quando alugar
+  Entao o preço do aluguel será R$ 4 
+  E a data de entrega será em 1 dias
+  E a pontuaçao recebida será de 1 pontos 
+  
   
