@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 		features = "src/test/resources/features/alugar_filme.feature",
 		glue = "com.charles.steps",
 		plugin = {"pretty", "html:target/report-html", "json:target/report.json"},
-		monochrome = true,
+		monochrome = false,
 		tags = "~@ignore",
 		snippets = SnippetType.CAMELCASE,
 		dryRun = false,
