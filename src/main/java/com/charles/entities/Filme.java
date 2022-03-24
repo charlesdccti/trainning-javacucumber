@@ -2,23 +2,23 @@ package com.charles.entities;
 
 public class Filme {
 
-	private int estoque;
-	private int aluguel;
+	private Integer estoque;
+	private Integer aluguel;
 
 	
 	public void setEstoque(Integer int1) {
 		this.estoque = int1;
 	}
 
-	public int getAluguel() {
+	public Integer getAluguel() {
 		return aluguel;
 	}
 
-	public void setAluguel(int aluguel) {
+	public void setAluguel(Integer aluguel) {
 		this.aluguel = aluguel;
 	}
 
-	public int getEstoque() {
+	public Integer getEstoque() {
 		return estoque;
 	}
 

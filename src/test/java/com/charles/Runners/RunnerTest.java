@@ -18,6 +18,6 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 		dryRun = false,
 		strict = false
 		)
-public class Runner {
+public class RunnerTest {
 
 }

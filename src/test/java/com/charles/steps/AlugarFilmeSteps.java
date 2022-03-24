@@ -44,7 +44,7 @@ public class AlugarFilmeSteps {
 	}
 
 	@Dado("que o preço do aluguel seja R$ {int}")
-	public void queOPreçoDeAluguelSejaR$(int int1) {
+	public void queOPreçoDeAluguelSejaR$(Integer int1) {
 	    filme.setAluguel(int1);
 	}
 
@@ -78,7 +78,7 @@ public class AlugarFilmeSteps {
 	
 
 	@Entao("o estoque do filme será {int} unidade.")
-	public void oEstoqueDoFilmeSeráUnidade(int int1) {
+	public void oEstoqueDoFilmeSeráUnidade(Integer int1) {
 		Assert.assertEquals(int1, filme.getEstoque());
 	}
 
@@ -103,7 +103,7 @@ public class AlugarFilmeSteps {
 	}
 
 	@Entao("a pontuação será de {int} pontos")
-	public void aPontuaçaoRecebidaSeráDePontos(int int1) {
+	public void aPontuaçaoRecebidaSeráDePontos(Integer int1) {
 	    Assert.assertEquals(int1, notaAluguel.getPontuacao());		
 	}
 }

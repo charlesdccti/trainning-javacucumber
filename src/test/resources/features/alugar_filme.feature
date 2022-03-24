@@ -17,7 +17,6 @@ Cenario: Deve alugar um filme com sucesso
   
 Cenario: Não deve alugar filme sem sucesso
   Dado um filme com estoque de 0 unidades
-  E que o preço de aluguel seja R$ 3  
   Quando alugar
   Entao nao será possível por falta de estoque
   E o estoque do filme será 0 unidade.
