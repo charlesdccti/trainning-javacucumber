@@ -12,7 +12,7 @@ import io.cucumber.junit.CucumberOptions.SnippetType;
 		features = "src/test/resources/features/inserir_conta.feature",
 		glue = "com.charles.steps",
 		plugin = {"pretty", "html:target/report-html", "json:target/report.json"},
-		monochrome = false,
+		monochrome = true,
 		tags = "~@ignore",
 		snippets = SnippetType.CAMELCASE,
 		dryRun = false,
