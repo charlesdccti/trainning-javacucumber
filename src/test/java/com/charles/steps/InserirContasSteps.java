@@ -72,4 +72,10 @@ public class InserirContasSteps {
 		String texto = driver.findElement(By.xpath("//div[@class='alert alert-danger']")).getText();
 	    Assert.assertEquals("Informe o nome da conta", texto);
 	}
+	
+	@Então("sou notificado que já existe uma conta com esse nome")
+	public void souNotificadoQueJáExisteUmaContaComEsseNome() {
+		String texto = driver.findElement(By.xpath("//div[@class='alert alert-danger']")).getText();
+	    Assert.assertEquals("Já existe uma conta com esse nome!", texto);  
+	}
 }

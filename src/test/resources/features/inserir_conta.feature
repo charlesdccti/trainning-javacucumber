@@ -30,7 +30,7 @@ Cenário: Não deve inserir uma conta sem nome
 		E seleciono Salvar
 		Então sou notificado que o nome da conta é obrigatório
 
-@ignore
+
 Cenário: Não deve inserir uma conta com nome já existente
 		Dado que estou acessando a aplicação
 		Quando informo o usuário "a@a"
