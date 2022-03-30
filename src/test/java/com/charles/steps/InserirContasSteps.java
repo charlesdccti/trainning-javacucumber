@@ -6,6 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import io.cucumber.java.pt.Dado;
+import io.cucumber.java.pt.Entao;
 import io.cucumber.java.pt.Então;
 import io.cucumber.java.pt.Quando;
 
@@ -77,5 +78,11 @@ public class InserirContasSteps {
 	public void souNotificadoQueJáExisteUmaContaComEsseNome() {
 		String texto = driver.findElement(By.xpath("//div[@class='alert alert-danger']")).getText();
 	    Assert.assertEquals("Já existe uma conta com esse nome!", texto);  
+	}
+	
+	@Entao("recebo a mensagem {string}")
+	public void receboAMensagem(String string) {
+		String texto = driver.findElement(By.xpath("//div[starts-with(@class, 'alert alert-')]")).getText();
+	    Assert.assertEquals(string, texto);
 	}
 }
