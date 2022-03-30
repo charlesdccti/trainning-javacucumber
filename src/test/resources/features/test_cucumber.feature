@@ -1,4 +1,5 @@
 # language: pt
+@unitários
 Funcionalidade: Aprender Cucumber
 	Como aluno
 	Eu quero aprender a ultilizar o cucumber
