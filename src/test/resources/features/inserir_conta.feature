@@ -8,17 +8,10 @@ Funcionalidade: Cadastro de contas
 
 
 Contexto: 
-		Dado que estou acessando a aplicação
-		Quando informo o usuário "a@a"
-		E a senha "a"
-		E seleciono entrar
-		Então visualizo a página inicial
-		Quando seleciono Contas
-		E seleciono Adicionar
+		Dado que desejo adicionar uma conta
 	
 Esquema do Cenário: Deve validar regras cadastro contas
-		Quando informo a conta "<conta>"
-		E seleciono Salvar
+		Quando adiciono a conta "<conta>"
 		Entao recebo a mensagem "<mensagem>"
 	
 Exemplos:
