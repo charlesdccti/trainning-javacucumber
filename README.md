@@ -12,3 +12,7 @@ monochrome = false
 
 ### Running the tests in command line
 mvn test
+
+## Article about BDD and TDD
+- https://medium.com/@jessica.fpeixoto/bdd-vs-tdd-qual-o-melhor-83fd8df7f662#8aa1
+
